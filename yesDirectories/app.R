@@ -1,6 +1,6 @@
 ui <- fluidPage(
   
-  titlePanel("Test Title"),
+  titlePanel("New folder title"),
   mainPanel(
     textOutput("test")
   )
@@ -9,7 +9,7 @@ ui <- fluidPage(
 server <- function(input, output) {
   
   output$test <- renderText({
-    paste("Hello world ")
+    paste("In new folder")
   })
   
 }
