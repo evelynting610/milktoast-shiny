@@ -6,11 +6,13 @@ ui <- fluidPage(
   )
 )
 
-server <- function(input, output) {
+server <- function(input, output, session) {
   
+  print("I reconnected!")
   output$test <- renderText({
     paste("Hello world ")
   })
+  session$allowReconnect("force")
   
 }
 
