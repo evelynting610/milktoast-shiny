@@ -6,13 +6,14 @@ ui <- fluidPage(
   )
 )
 
-server <- function(input, output, session) {
+server <- function(input, output) {
   
   print("I reconnected!")
   output$test <- renderText({
+    print("rendered hello world")
     paste("Hello world ")
   })
-  session$allowReconnect("force")
+  reactiveTimer(intervalMs = 1000)
   
 }
 
