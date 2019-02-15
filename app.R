@@ -1,5 +1,6 @@
 ui <- fluidPage(
-  
+  tags$head(HTML("
+                <script type='text/javascript' src='keep-alive.js'></script>")),
   titlePanel("Test Title"),
   mainPanel(
     textOutput("test")
@@ -8,12 +9,12 @@ ui <- fluidPage(
 
 server <- function(input, output) {
   
-  print("I reconnected!")
   output$test <- renderText({
-    print("rendered hello world")
-    paste("Hello world ")
+    "Hello world"
   })
-  reactiveTimer(intervalMs = 1000)
+  output$keep_alive <- renderText({
+    input$alive_count
+  })
   
 }
 
