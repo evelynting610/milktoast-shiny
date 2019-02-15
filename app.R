@@ -12,9 +12,8 @@ server <- function(input, output) {
   output$test <- renderText({
     "Hello world"
   })
-  output$keep_alive <- renderText({
-    input$alive_count
-  })
+
+  observe(input$alive_count)
   
 }
 
