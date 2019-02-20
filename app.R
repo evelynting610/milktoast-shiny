@@ -9,6 +9,8 @@ ui <- fluidPage(
 
 server <- function(input, output) {
   
+  print("server has started")
+  
   output$test <- renderText({
     "Hello world"
   })
