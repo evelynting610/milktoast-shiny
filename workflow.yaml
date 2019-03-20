@@ -12,8 +12,8 @@ workflow:
       input:
         job_id: 12927662
       on-success:
-        - CFT_Activation_Workflow_Weekly_Users_12927672
-    CFT_Activation_Workflow_Weekly_Users_12927672:
+        - 03_Activation_Workflow
+    03_Activation_Workflow:
       action: civis.run_job
       input:
         job_id: 12927672
