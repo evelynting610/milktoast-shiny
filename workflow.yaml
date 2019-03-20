@@ -12,7 +12,7 @@ workflow:
       input:
         job_id: 12927662
       on-success:
-        - 03_Activation_Workflow
+        - 03_Activation_Workflow 
     03_Activation_Workflow:
       action: civis.run_job
       input:
